@@ -1,0 +1,53 @@
+.add-channel {
+  margin-bottom: 20px;
+}
+
+.rssLinks
+{border-radius: 250px;
+  border: .75px solid turquoise ;
+  background-image: linear-gradient(to bottom , rgba(247, 238, 238, 0), rgb(247, 239, 239));
+  font-family: montserrat;
+height:40px; 
+width:600px; 
+margin: .05px;
+
+padding: 5px;
+font-size: 18px;
+background-color: 009900; 
+}
+
+.heading
+{
+  font-family: montserrat;
+  padding-left: 30px;
+  
+}
+
+.bro
+{
+  font-family:montserrat;;
+  font-size: 22px;
+}
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+

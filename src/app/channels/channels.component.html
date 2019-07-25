@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-md-5">
+        <div style="border: 1px solid #ffc107; border-radius: 4px; margin-right: 20px;">
+            <div class="bg-warning"
+                style="color: cornsilk; border-top-left-radius:  4px; border-top-right-radius: 4px; padding: 4px; padding-left: 16px;">
+                <h2> The rss links are :</h2>
+ 
+            </div>
+            <br>
+            <div>
+                <div class="col-md-12 text-warning" (click)="data = [];loadChannel(room.url);" *ngFor="let room of arrray; let i = index">
+                    {{room.name}} ( {{room.url}} )
+                    <hr *ngIf="i != arrray.length-1">
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+
+
+    <div class="col-md-7 text-info" *ngIf="loading">
+        <br>
+        LOADING...
+    </div>
+
+    <div class="col-md-7" *ngIf="!loading">
+        <div *ngFor="let room of data; let i = index">
+            <div style="border-radius: 4px;border-bottom: 1px solid white; margin: 2px; color: white; background: darkgray; padding: 2px;" class="row" class="col-md-12" *ngIf="i>=1">
+                <div style="padding: 6px;" (click)="clicker[i] = !clicker[i]">
+                    <i>{{room.title}}</i>
+                </div>
+                <div style="color:darkgray; background: white; padding:10px; margin-top: 10px;">
+                    <div *ngFor="let key of keys;">
+
+
+                        <div *ngIf="key==='title'">
+                            <label> <i>Title :</i> <b>{{room[key]}}</b></label>
+                        </div>
+
+                        <div *ngIf="key==='categories'">
+                            <label>Categories :<b>{{room[key].join(", ")}}</b></label>
+                        </div>
+
+
+                        <div *ngIf="key==='pubDate'">
+                            <label>Published Date and Time :<b>{{room[key]}}</b></label>
+                        </div>
+
+
+
+                    </div>
+                    <div style="margin-left: 90%;margin-right: 10px;">
+                        <a href="{{room.link}}" target="_blank">
+                            <button type="button" class="btn btn-light">Link</button>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
